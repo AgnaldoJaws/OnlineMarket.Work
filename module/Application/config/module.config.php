@@ -53,6 +53,16 @@ return array(
         ),
     ),
     'service_manager' => array(
+    
+    'services'=>array(
+    'categories'=>array(
+    	'Barter',
+    	'several'
+    
+    )
+    
+    ),
+    
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',

@@ -22,7 +22,7 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
         
-        //escuata / listeners: "dispach" event
+        //escuat / listeners: "dispach" event
         //context: $this
         // handler q calback / metodo: onDispatch ()
         // priority / prioridade: 100
@@ -36,13 +36,22 @@ class Module
     
     public function onDispatch (MvcEvent $e)
     {
-    	
+    	$sm = $e->getApplication()->getServiceManager();
+    	$categories = $sm->get("categories");
     	$vm = $e->getViewModel();
-    	$vm->setVariable("categories", "CATEGORIA LIST");
+    	$vm->setVariable("categories", $categories);
     	
     }
     
-   
+    public function getServiceConfig(){
+    	
+    	return array(
+    			'invokables'=> array(
+    				'ExemploService'=>	'Application\Service\a'
+    			)
+    			
+    			);
+    }
 
     public function getConfig()
     {
