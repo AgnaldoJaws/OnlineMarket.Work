@@ -57,7 +57,11 @@ return array(
     'services'=>array(
     'categories'=>array(
     	'Barter',
-    	'several'
+    	'Beuty',
+    	'clothing',
+    	'computer',
+    	'free',
+    	'garden',
     
     )
     
