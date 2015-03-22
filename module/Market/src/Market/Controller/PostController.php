@@ -22,10 +22,10 @@ class PostController extends AbstractActionController
 
 	public function indexAction()
 	{
-	 
-	 
-	 
-	# o valor está sendo forçado
-	return new ViewModel(array('categories'=>$this->categories));
+
+
+
+		# o valor está sendo forçado
+		return new ViewModel(array('categories'=>$this->categories));
 	}
-	}
+}
