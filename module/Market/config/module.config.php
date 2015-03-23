@@ -21,11 +21,42 @@ return array(
 										'defaults'=> array(
 												'controller'=>'market-index-controller',
 												'action'=>'index'
-										)
-								)
+										),
+								),
+								
+								
+								'may_terminate' => true,
+								'child_routes'=> array(
+									
+										'market-index-controller' => array(
+												'type'    => 'Segment',
+												'options' => array(
+														'route'    => 'market-index-controller[/]',
+														'defaults' => array(
+																'action'=>'index'
+														),
+												),
+												
+												'may_terminate' => true,
+												'child_routes' => array(
+														'index' => array(
+																'type'    => 'Segment',
+																'options' => array(
+																		'route'    => 'index[/:param][/]',
+																		'defaults' => array(
+																				'action' => 'index'
+																		),
+																),
+														),
+												),
+										),
+								),
 						),
-							
-							
+						
+						
+						
+								
+								
 						'market-post'=>array(
 								'type'=>'literal',
 								'options'=>array(
@@ -74,7 +105,7 @@ return array(
 																'itemId'=>'[0-9]*'
 																	
 														)
-					      	)
+					                        	)
 										)
 								),
 						)
@@ -83,8 +114,8 @@ return array(
 
 		'controllers' => array(
 				'invokables' => array(
-						'market-index-controller' => 'Market\Controller\IndexController',
-						'market-view-controller'=> 'Market\Controller\ViewController'
+				'market-index-controller' => 'Market\Controller\IndexController',
+				'market-view-controller'=> 'Market\Controller\ViewController'
 				),
 				'factories'=>array(
 						#quando chamar o market-p-c, a factory será executada
