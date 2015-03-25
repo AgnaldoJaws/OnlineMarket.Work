@@ -4,71 +4,87 @@
 return array(
 		'router' => array(
 				'routes' => array(
-						'home'=>array(
-								'type'=>'literal',
-								'options'=>array(
-										'route'=> '/',
-										'defaults'=> array(
-												'controller'=>'market-index-controller',
-												'action'=>'index'
-										)
-								)
-						),
+						
 						'market'=>array(
-								'type'=>'literal',
+							'type'=>'literal',
 								'options'=>array(
-										'route'=> '/market',
+										'route'=> '/market1/',
 										'defaults'=> array(
 												'controller'=>'market-index-controller',
 												'action'=>'index'
 										),
+								
 								),
 								
-								
-								'may_terminate' => true,
-								'child_routes'=> array(
-									
-										'market-index-controller' => array(
-												'type'    => 'Segment',
+								'may_terminate'=> true,
+								'child_routes'=>array(
+										'slash' => array(
+												'type'    => 'Literal',
 												'options' => array(
-														'route'    => 'market-index-controller[/]',
+														'route'    => 'post1/',
 														'defaults' => array(
-																'action'=>'index'
+																'controller'    => 'market-post-controller',
+																'action'        => 'index',
 														),
 												),
 												
-												'may_terminate' => true,
-												'child_routes' => array(
-														'index' => array(
-																'type'    => 'Segment',
-																'options' => array(
-																		'route'    => 'index[/:param][/]',
-																		'defaults' => array(
-																				'action' => 'index'
-																		),
+												),
+										
+										),
+								'may_terminate' => true,
+								'child_routes' => array(
+										'slash' => array(
+												'type'    => 'Literal',
+												'options' => array(
+														'route'    => 'view1/',
+														'defaults' => array(
+																'controller'    => 'market-view-controller',
+																'action'        => 'index',
+														),
+												),
+													
+										),
+										
+										
+								),
+								
+								
+								'market-view'=>array(
+										'type'=>'literal',
+										'options'=>array(
+												'route'=>'/market/view',
+												'defaults'=>array(
+														'controller'=>'market-view-controller',
+														'action'=>'index',
+															
+												),
+								
+										),
+										
+										
+										
+										'may_terminate' => true,
+											
+										'child_routes' => array(
+												#rota filha
+												'index' => array(
+														'type'    => 'Segment',
+														'options' => array(
+																'route'    => '/main[/:category]',
+																'defaults' => array(
+																		'action'=>'index'
 																),
 														),
 												),
-										),
-								),
-						),
-						
-						
-						
-								
-								
-						'market-post'=>array(
-								'type'=>'literal',
-								'options'=>array(
-										'route'=> '/market/post',
-										'defaults'=> array(
-												'controller'=>'market-post-controller',
-												'action'=>'index'
+												
+												
+												)
+										
 										)
-								)
-						),
-							
+											
+								),
 						'market-view'=>array(
+								
 								'type'=>'literal',
 								'options'=>array(
 										'route'=>'/market/view',
@@ -77,27 +93,26 @@ return array(
 												'action'=>'index',
 													
 										),
-
+								
 								),
-									
-									
+								
 								'may_terminate' => true,
 									
 								'child_routes' => array(
 										#rota filha
-									 'index' => array(
-									 		'type'    => 'Segment',
-									 		'options' => array(
-									 				'route'    => '/main[/:category]',
-									 				'defaults' => array(
-									 						'action'=>'index'
-									 				),
-									 		),
-									 ),
+										'index' => array(
+												'type'    => 'Segment',
+												'options' => array(
+														'route'    => '/main[/:category]',
+														'defaults' => array(
+																'action'=>'index'
+														),
+												),
+										),
+										
 										'item'=>array(
 												'type'=>'Segment',
-												'options'=>array(
-					      			'route'=>'/item[/:itemId]',
+												'options'=>array(			                                      'route'=>'/item[/:itemId]',
 														'defaults'=>array(
 																'action'=>'item',
 														),
@@ -105,10 +120,15 @@ return array(
 																'itemId'=>'[0-9]*'
 																	
 														)
-					                        	)
-										)
-								),
+												)
+												
+												)
+										),
+								
 						)
+						
+						
+					
 				)
 		),
 
