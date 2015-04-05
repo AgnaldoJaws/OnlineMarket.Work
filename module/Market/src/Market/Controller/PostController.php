@@ -22,10 +22,11 @@ class PostController extends AbstractActionController
 
 	public function indexAction()
 	{
-
-
-
+		#resolver vai direto pro templete
+		#ao invez de ir para o index
+		$viewModel = new ViewModel(array('categories'=>$this->categories));
+		$viewModel->setTemplate("market/post/invalid.phtml");
 		# o valor está sendo forçado
-		return new ViewModel(array('categories'=>$this->categories));
+		return $viewModel;
 	}
 }

@@ -9,7 +9,7 @@ return array(
 										'defaults'=>array(
 												'controller'=>'market-view-controller',
 												'action'=>'index',
-									),
+										),
 								),
 
 								'may_terminate' => true,
@@ -22,8 +22,8 @@ return array(
 														'defaults' => array(
 																'controller'=>'market-view-controller',
 																'action'=>'index'
+														),
 												),
-											),
 										),
 
 										'item'=>array(
@@ -35,11 +35,11 @@ return array(
 														),
 														'constraints'=> array(
 																'itemId'=>'[0-9]*'
-										              )
-									              )
-								             )
-							             ),
-						             ),#final view-market
+														)
+												)
+										)
+								),
+						),#final view-market
 
 						'market'=>array(
 								'type'=>'literal',
@@ -48,7 +48,7 @@ return array(
 										'defaults'=> array(
 												'controller'=>'market-index-controller',
 												'action'=>'index'
-								   ),
+										),
 								),
 
 								'may_terminate'=> true,
@@ -60,8 +60,8 @@ return array(
 														'defaults' => array(
 																'controller'    => 'market-index-controller',
 																'action'        => 'index',
-								    		   ),
-										   ),
+														),
+												),
 										),
 
 										'post'=> array(
@@ -71,7 +71,7 @@ return array(
 														'defaults'=>array(
 																'controller'=>'market-post-controller',
 																'action'=>'index',
-												    ),
+														),
 												),
 
 												'may_terminate'=> true,
@@ -83,11 +83,11 @@ return array(
 																		'defaults' => array(
 																				'controller'    => 'market-post-controller',
 																				'action'        => 'index',
-														      ),
-													       ),
-												        ),
-											          ),
-										            ),
+																		),
+																),
+														),
+												),
+										),
 
 										'view'=>array(
 												'type'=>'Segment',
@@ -96,26 +96,26 @@ return array(
 														'defaults'=>array(
 																'controller'=>'market-view-controller',
 																'action'=>'index',
-													),
+														),
 												),
 
-							'may_terminate'=> true,
-								'child_routes'=>array(
-								    'slash' => array(
-										'type'    => 'Literal',
-											'options' => array(
-											    'route'    => '/',
-												'defaults' => array(
-												'controller'    => 'market-view-controller',
-												'action'        => 'index',
-								 ),
-							   ),
-							),
-						  ),
-					   )
-				   ),
-			    )#final market
-	     	)
+												'may_terminate'=> true,
+												'child_routes'=>array(
+														'slash' => array(
+																'type'    => 'Literal',
+																'options' => array(
+																		'route'    => '/',
+																		'defaults' => array(
+																				'controller'    => 'market-view-controller',
+																				'action'        => 'index',
+																		),
+																),
+														),
+												),
+										)
+								),
+						)#final market
+				)
 		),
 
 		'controllers' => array(
