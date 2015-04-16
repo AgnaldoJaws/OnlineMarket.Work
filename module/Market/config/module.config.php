@@ -130,6 +130,7 @@ return array(
 						#o controller, vai dar um setCategories no controller
 						# e retorna o controller
 						'market-post-controller'=>'Market\Factory\PostControllerFactory'
+					
 
 				),
 				'aliases'=>array(
@@ -137,6 +138,14 @@ return array(
 
 				)
 		),
+		
+		'service_manager' => array(
+			'factories' => array(
+				'market-post-form'      => 'Market\Factory\PostFormFactory',
+				'market-post-filter'    => 'Market\Factory\PostFilterFactory'
+				  )
+			),
+		
 
 		'view_manager' => array(
 				'template_path_stack' => array(

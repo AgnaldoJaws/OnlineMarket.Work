@@ -19,10 +19,10 @@ class ViewController extends AbstractActionController
 	}
 
 	public function itemAction (){
-		 
+			
 		#permite consulta pela barra de endereço
 		$itemId = $this->params()->fromRoute('itemId');
-		 
+			
 		if (!$itemId){
 			$this->flashMessenger()->addMessage("Item not found");
 			return $this->redirect()->toRoute('market');
