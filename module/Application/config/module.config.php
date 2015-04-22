@@ -46,8 +46,8 @@ return array(
 
 				'services'=>array(
 						'categories'=>array(
-								'Barter',
-								'Beauty',
+								'barter',
+								'beauty',
 								'clothing',
 								'computer',
 								'free',
