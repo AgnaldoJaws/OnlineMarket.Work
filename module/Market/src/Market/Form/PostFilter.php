@@ -58,13 +58,13 @@ public function buildFilter()
 		$price->setAllowEmpty(TRUE);
 		$price->getValidatorChain()
 			  ->addByName('GreaterThan', array('min' => 0.00));
-		$price->getFilterChain();
-			 # ->attach(new Float());	// custom filter
+		$price->getFilterChain()
+			 ->attach(new Float());	// custom filter
 
 		$expires = new Input('expires');
 		$expires->setAllowEmpty(TRUE);
-		$expires->getValidatorChain();
-			#	->attachByName('InArray', array('haystack' => array_keys($this->getExpireDays())));
+		$expires->getValidatorChain()
+			->attachByName('InArray', array('haystack' => array_keys($this->getExpireDays())));
 		$expires->getFilterChain()
 			    ->attachByName('StripTags')
 				->attachByName('StringTrim');
