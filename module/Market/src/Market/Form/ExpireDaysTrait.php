@@ -1,10 +1,12 @@
 <?php
 namespace Market\Form;
 
-  class  ExpireDaysTrait
+  use Zend\Form\Form;
+
+		trait  ExpireDaysTrait 
   
 {
-	use  \Market\Form\ExpireDaysTrait;
+	
 	protected $expireDays;
 	
 	/**

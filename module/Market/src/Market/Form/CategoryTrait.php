@@ -1,7 +1,8 @@
 <?php
 namespace Market\Form;
 
-  class CategoryTrait
+  trait CategoryTrait
+  
 {
 	protected $categories;
 	/**
