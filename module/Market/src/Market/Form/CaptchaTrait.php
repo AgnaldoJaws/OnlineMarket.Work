@@ -1,7 +1,7 @@
 <?php
 namespace Market\Form;
 
-class CaptchaTrait
+   class CaptchaTrait
 {
     protected $captchaOptions;	
 	/**

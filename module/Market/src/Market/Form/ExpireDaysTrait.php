@@ -1,9 +1,10 @@
 <?php
 namespace Market\Form;
 
-class ExpireDaysTrait
+  class  ExpireDaysTrait
+  
 {
-    
+	use  \Market\Form\ExpireDaysTrait;
 	protected $expireDays;
 	
 	/**
