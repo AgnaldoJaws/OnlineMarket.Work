@@ -121,7 +121,8 @@ return array(
 		'controllers' => array(
 				'invokables' => array(
 						'market-index-controller' => 'Market\Controller\IndexController',
-						'market-view-controller'=> 'Market\Controller\ViewController'
+                    'market-view-controller'=> 'Market\Controller\ViewController'
+
 				),
 				'factories'=>array(
 						#quando chamar o market-p-c, a factory será executada
@@ -130,6 +131,7 @@ return array(
 						#o controller, vai dar um setCategories no controller
 						# e retorna o controller
 						'market-post-controller'=>'Market\Factory\PostControllerFactory'
+
 					
 
 				),
@@ -141,11 +143,20 @@ return array(
 		
 		'service_manager' => array(
 			'factories' => array(
+					#pega a chave de db e injeta nela mesma para criar
+					# o adaptador, AdapterServiceFactory cria a conexão
+				'general-adapter'=>'Zend\Db\Adapter\AdapterServiceFactory',
 				'market-post-form'      => 'Market\Factory\PostFormFactory',
-				'market-post-filter'    => 'Market\Factory\PostFilterFactory'
-				  )
-			),
-		
+				'market-post-filter'    => 'Market\Factory\PostFilterFactory',
+				'listings-table'  => 'Market\Factory\ListingsTableFactory'
+				  ),
+
+
+
+
+
+
+    ),
 
 		'view_manager' => array(
 				'template_path_stack' => array(

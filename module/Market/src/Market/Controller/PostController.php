@@ -10,14 +10,18 @@ use Zend\View\Model\ViewModel;
 class PostController extends AbstractActionController
 {
 
+	use ListingsTableTrait;
 	public $categories;
 	private $postForm;
+	
+	
 
 	#esta função possibilita a injeção
 	#de um formulario
 	public function setPostForm($postForm)
 	{
-			
+		
+		
 		$this->postForm = $postForm;
 	}
 

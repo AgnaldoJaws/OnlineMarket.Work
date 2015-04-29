@@ -10,6 +10,7 @@ use Zend\View\Model\ViewModel;
 
 class ViewController extends AbstractActionController
 {
+	use ListingsTableTrait;
 	public function indexAction()
 	{
 		#pegando os valores da rota

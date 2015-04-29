@@ -7,7 +7,8 @@ namespace Market\Form;
   
 {
 	
-	protected $expireDays;
+	public $expireDays;
+
 	
 	/**
 	 * @return the $expireDays
@@ -20,6 +21,7 @@ namespace Market\Form;
 	 * @param array $expireDays;
 	 */
 	public function setExpireDays($expireDays) {
+
 		$this->expireDays = $expireDays;
 	}
 	

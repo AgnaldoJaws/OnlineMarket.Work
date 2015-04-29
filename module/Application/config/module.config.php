@@ -61,7 +61,26 @@ return array(
 								'transportation',
 								'wanted'
 									
-						)
+                        ),
+                    'expireDays'=>array(
+
+
+                        '1' => '1 day',
+                        '5' => '5 days',
+                        '10' => '10 days',
+                        '20' => '20 days',
+
+                    ),
+                    'captchaOptions' => array(
+                        'font' =>  __DIR__ . '/../../../data/fonts/arial.ttf',
+                        'imgDir'    => __DIR__ . '/../../../public/captcha',
+                        'imgUrl'    => '/captcha',
+                        'fontSize' => 50,
+                        'height' => 100,
+                        'width' => 200,
+                        'dotNoiseLevel' => 40,
+                        'lineNoiseLevel' => 6
+                    )
 				),
 
 				'abstract_factories' => array(

@@ -16,7 +16,7 @@ class PostControllerFactory implements FactoryInterface
 	{
 		$allServices = $controllerManager->getServiceLocator();
 		$sm = $allServices->get('ServiceManager');
-		# pegando as categorias do serviço
+		#pegando as categorias do serviço
 		$categories = $sm->get('categories');
 
 		#instanciando a controller
@@ -24,7 +24,7 @@ class PostControllerFactory implements FactoryInterface
 		#passando as categorias
 		$postController->setCategories($categories);
 		$postController->setPostForm($sm->get('market-post-form'));
-
+        //$postController->setListingsTable($sm->get('listings-table'));
 		return $postController;
 		#trabalhando uma factory para fabricar um postcontroller
 		#e injetar informações dentro dele
