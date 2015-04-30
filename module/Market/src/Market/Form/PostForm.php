@@ -63,8 +63,8 @@ class PostForm extends Form
 		$expires = new Element\Radio('expires');
 		$expires->setLabel('Expires')
 			    ->setAttribute('title', 'The expiration date will be calculated from today')
-			    ->setAttribute('class', 'expiresButton')
-			    ->setValueOptions(array($this->getExpireDays()));
+			    ->setAttribute('class', 'expiresButton')			    
+		             ->setValueOptions($this->getExpireDays());
 
 		
 		$city = new Element\Text('cityCode');

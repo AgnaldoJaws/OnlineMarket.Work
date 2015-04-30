@@ -142,6 +142,8 @@ return array(
 		),
 		
 		'service_manager' => array(
+				
+				
 			'factories' => array(
 					#pega a chave de db e injeta nela mesma para criar
 					# o adaptador, AdapterServiceFactory cria a conexão
@@ -151,7 +153,7 @@ return array(
 				'listings-table'  => 'Market\Factory\ListingsTableFactory'
 				  ),
 
-
+ 
 
 
 
