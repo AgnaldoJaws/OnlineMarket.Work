@@ -13,7 +13,8 @@ class PostFilter extends InputFilter
 	use \Market\Form\ExpireDaysTrait;
 	use \Market\Form\CategoryTrait;
 	use \Market\Form\CaptchaTrait;
-	
+
+
 	
 	
 	public function setCategories ($categories)

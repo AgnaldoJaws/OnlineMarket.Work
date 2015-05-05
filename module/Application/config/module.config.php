@@ -66,9 +66,9 @@ return array(
 
 
                         '1' => '1 day',
-                        '5' => '5 days',
-                        '10' => '10 days',
-                        '20' => '20 days',
+                        '5' => '5 day',
+                        '10' => '10 day',
+                        '20' => '20 day',
 
                     ),
                     'captchaOptions' => array(

@@ -3,6 +3,11 @@
 
 namespace Market\Controller;
 
+/**
+ * Description of ViewController
+ *
+ * @author ennio
+ */
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -13,9 +18,7 @@ class ViewController extends AbstractActionController{
     
     public function indexAction() {
         
-        #pegando os valores da rota
-		$category = $this->params()->fromRoute("category");
-		# o valor está sendo forçado
+        $category = $this->params()->fromRoute("category");
        $listings = $this->listingsTable->getListingsByCategory($category);
         
         return new ViewModel(array('category' => $category, 'list' => $listings));
@@ -23,7 +26,6 @@ class ViewController extends AbstractActionController{
     
     public function itemAction() 
     {
-        #permite consulta pela barra de endereço
         $itemId = $this->params()->fromRoute("itemId");
         
         $item = $this->listingsTable->getListingsByID($itemId);

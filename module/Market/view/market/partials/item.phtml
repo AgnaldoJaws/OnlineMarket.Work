@@ -1,0 +1,34 @@
+ <h1>Items:</h1>
+ <!--pega o item que passou para a view model,
+ e vai exibir essa informação  -->
+<?php if ($item):?>
+	<h3><?php echo $this->escapehtml(ucwords($item->title));?></h3>
+
+		<div style="width: 250px; float:left;">
+		 	<?php if($item->photo_filename):?>
+	
+				<img src="<?php echo $item->photo_filename;?>"/>
+			<?php else:?>	
+				No image
+			<?php endif;?>
+	    </div>
+	
+	<div style="width: 400px; float:left; margin:20px">
+		<b>Contact Details</b>
+		<br>
+		<?php echo $this->escapehtml($item->contact_name);?>
+		<?php echo $this->escapehtml($item->contact_email);?>
+		<?php echo $this->escapehtml($item->contact_phone);?>
+		
+		<br> <b>Posting Details:</b>
+		<br><?php echo $this->escapehtml($item->date_created); ?>
+		<br>Price:<?php  echo $this->escapehtml($item->price); ?>
+		<br>City<?php echo $this->escapehtml($item->city); ?>,Country:
+		<?php echo $this->escapehtml($item->country); ?>
+		<br>Description:
+		<p> <?php echo $this->escapehtml($item->description);?> </p>
+   </div>
+   
+   <?php else:?>
+   No Recent Posting!
+<?php endif;?>

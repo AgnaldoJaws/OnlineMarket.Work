@@ -120,8 +120,8 @@ return array(
 
 		'controllers' => array(
 				'invokables' => array(
-						'market-index-controller' => 'Market\Controller\IndexController',
-                    'market-view-controller'=> 'Market\Controller\ViewController'
+					
+                    
 
 				),
 				'factories'=>array(
@@ -130,7 +130,9 @@ return array(
 						#os serviços da categoria, vai instanciar
 						#o controller, vai dar um setCategories no controller
 						# e retorna o controller
-						'market-post-controller'=>'Market\Factory\PostControllerFactory'
+						'market-post-controller'=>'Market\Factory\PostControllerFactory',
+						'market-view-controller'=> 'Market\Factory\ViewControllerFactory',
+						'market-index-controller' => 'Market\Factory\IndexControllerFactory'
 
 					
 

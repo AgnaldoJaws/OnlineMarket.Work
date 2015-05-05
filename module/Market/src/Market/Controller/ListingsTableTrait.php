@@ -1,16 +1,18 @@
 <?php
 
-
 namespace Market\Controller;
 
-  trait ListingsTableTrait
-{
-	private $listingstable;
-	
-	public function setListingsTable($ListingsTable)
-	{
-		$this->listingstable = $ListingsTable;
-		
-	}
-	
+/**
+ * Description of ListingsTableTrait
+ *
+ * @author ennio
+ */
+trait ListingsTableTrait {
+
+    private $listingsTable;
+
+    function setListingsTable($listingsTable) {
+        $this->listingsTable = $listingsTable;
+    }
+
 }

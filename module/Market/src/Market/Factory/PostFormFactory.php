@@ -1,17 +1,19 @@
-<?php 
+<?php
 
 namespace Market\Factory;
 
+/**
+ * Description of PostControllerFactory
+ *
+ * @author ennio
+ */
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Market\Form\PostForm;
 
-class PostFormFactory implements FactoryInterface
-{
+class PostFormFactory implements FactoryInterface {
 
-
-
-	#obriga a ter uma interface do serviceLocator
+#obriga a ter uma interface do serviceLocator
 	public function createService(ServiceLocatorInterface $sm)
 	{
 
@@ -32,6 +34,6 @@ class PostFormFactory implements FactoryInterface
 		#e injetar informações dentro dele
 	}
 
-
+	
 
 }
